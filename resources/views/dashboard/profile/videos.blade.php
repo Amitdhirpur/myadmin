@@ -1,13 +1,11 @@
 @extends('layouts.dashboard')
 @section('content')
 <style>
-
 </style>
 @php
 $segm2 = Request::segment(2);
 $segm3 = Request::segment(3);
-
- @endphp
+@endphp
 <section id="content">
    <div class="container container-alt">
       @include('dashboard.profile.include.header')
@@ -89,13 +87,13 @@ $segm3 = Request::segment(3);
                </div>
                <div class="lightbox">
                   @foreach($images as $image)
-                    <div  style=" padding-left:7px !important; padding-right: 0px !important; height: 0px !important;" class="col-md-3 col-sm-4 col-xs-6">
+                  <div  style=" padding-left:7px !important; padding-right: 0px !important; height: 0px !important;" class="col-md-3 col-sm-4 col-xs-6">
                      <div class="lightbox-item p-item">
-                       <video width="120px" height="120px" controls>
-                        <source src="{{url($image->image_path)}}" type="{{$image->mime_type}}">
-                      </video>
-                       </div>
+                        <video width="120px" height="120px" controls>
+                           <source src="{{url($image->image_path)}}" type="{{$image->mime_type}}">
+                        </video>
                      </div>
+                  </div>
                   @endforeach
                </div>
             </div>
@@ -107,7 +105,7 @@ $segm3 = Request::segment(3);
                   <div class="col-md-4">
                      {{ $images  ->links() }}
                   </div>
-                </div>
+               </div>
             </div>
          </div>
    </div>
@@ -122,10 +120,10 @@ $segm3 = Request::segment(3);
    });
 
 
-  $('a.cover-pic-btn').click(function(){
+   $('a.cover-pic-btn').click(function(){
     window.location.href=this.href;
      return false;
-  });
+   });
 
 
    $(".upload-image").on('click', function() {

@@ -6,16 +6,16 @@
    margin-top: 5px;
    }
    .hide-button{
-     opacity: 0;
+   opacity: 0;
    }
    .hide-button:hover{
-     opacity: 1;
+   opacity: 1;
    }
 </style>
 @php
 $segm2 = Request::segment(2);
 $segm3 = Request::segment(3);
- @endphp
+@endphp
 <section id="content">
    <div class="container container-alt">
       @include('dashboard.profile.include.header')
@@ -73,10 +73,10 @@ $segm3 = Request::segment(3);
                <div class="pmb-block clearfix photos">
                   <div class="p-header">
                      <ul class="p-menu">
-                       <li class="{{ $segm3 == 'photos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/photos"><i class="zmdi zmdi-image"></i> Photos</a></li>
-                       <li class="{{ $segm3 == 'videos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/videos"><i class="zmdi zmdi-play-circle"></i> Videos</a></li>
-                       <li class="{{ $segm3 == 'albums' || $segm3 == 'connections' ? '' : 'active'}}"><a href=""><i class="zmdi zmdi-collection-image"></i> Albums</a></li>
-                    </ul>
+                        <li class="{{ $segm3 == 'photos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/photos"><i class="zmdi zmdi-image"></i> Photos</a></li>
+                        <li class="{{ $segm3 == 'videos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/videos"><i class="zmdi zmdi-play-circle"></i> Videos</a></li>
+                        <li class="{{ $segm3 == 'albums' || $segm3 == 'connections' ? '' : 'active'}}"><a href=""><i class="zmdi zmdi-collection-image"></i> Albums</a></li>
+                     </ul>
                      <ul class="actions m-t-20 hidden-xs">
                         <li class="dropdown" dropdown>
                            <a href="" dropdown-toggle>
@@ -131,10 +131,10 @@ $segm3 = Request::segment(3);
    });
 
 
-  $('a.cover-pic-btn').click(function(){
+   $('a.cover-pic-btn').click(function(){
     window.location.href=this.href;
      return false;
-  });
+   });
 
 
    $(".upload-image").on('click', function() {

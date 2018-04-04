@@ -25,7 +25,6 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'],function(){
   Route::get('/', 'DashboardController@index');
   Route::get('list', 'DashboardController@list');
 
-
 Route::group(['prefix' => 'profile'],function(){
      Route::get('/','ProfileController@index');
      Route::get('timeline','ProfileController@timeline');

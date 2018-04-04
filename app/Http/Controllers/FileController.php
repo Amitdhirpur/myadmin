@@ -13,7 +13,6 @@ class FileController extends Controller
   {
       $userImage = new File;
       $file = $request->file('file');
-
       if($file && $file->isValid())
       {
         $filename = $file->getClientOriginalName();
@@ -27,7 +26,6 @@ class FileController extends Controller
 
         $userImage->save();
        }
-
        return back();
   }
 
