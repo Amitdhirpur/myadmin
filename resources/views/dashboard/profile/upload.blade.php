@@ -1,11 +1,15 @@
 @extends('layouts.dashboard')
 @section('content')
+@php
+$segm2 = Request::segment(2);
+$segm3 = Request::segment(3);
+@endphp
 <section id="content">
    <div class="container container-alt">
       @include('dashboard.profile.include.header')
-       <div class="card" id="profile-main">
-           <form method="post" action="/dashboard/profile/store" enctype="multipart/form-data">
-              {{ csrf_field() }}
+      <div class="card" id="profile-main">
+         <form method="post" action="/dashboard/profile/store" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <div class="pm-overview c-overflow">
                <div class="pmo-pic">
                   <div class="p-relative">
@@ -48,28 +52,34 @@
                </div>
                @include('dashboard.profile.include.sidebar')
             </div>
-            </form>
-            <div class="pm-body clearfix">
-               @include('dashboard.profile.include.tab')
-               <div class="pmb-block clearfix photos">
-                  <div class="p-header">
-                     <ul class="actions m-t-20 hidden-xs">
-                        <a href="/dashboard/profile/photos" style="width:60px" type="button" class="btn btn-primary">Back</a>
-                     </ul>
-                  </div>
+         </form>
+         <div class="pm-body clearfix">
+            @include('dashboard.profile.include.tab')
+            <div class="card">
+              <div class="pmb-block clearfix photos">
+                 <div class="p-header">
+                    <ul class="p-menu">
+                       <li class="{{ $segm3 == 'photos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/photos"><i class="zmdi zmdi-image"></i> Photos</a></li>
+                       <li class="{{ $segm3 == 'videos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/videos"><i class="zmdi zmdi-play-circle"></i> Videos</a></li>
+                    </ul>
+                 </div>
+                 <a type="button" href="/dashboard/profile/photos/upload"  class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-plus"></i></a>
+              </div>
+               <div class="card-body card-padding">
+                  <h4>Upload Multiple Image and videos.</h4>
+                  <form class="dropzone"  id="dropzone-upload">
+                     {!! csrf_field() !!}
+                  </form>
                </div>
-               <div class="card">
-                  <div class="card-header">
-                     <h2>Drag’n’Drop File Uploader <small>DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews. It’s lightweight, doesn't depend on any other library (like jQuery) and is highly customizable.</small></h2>
-                  </div>
-                  <div class="card-body card-padding">
-                     <p>Upload Multiple Image.</p>
-      <form class="dropzone"  id="dropzone-upload">
-      {!! csrf_field() !!}
-      </form>
-      </div>
-      </div>
-      </div>
+            </div>
+            <div class="pmb-block clearfix photos">
+               <div class="p-header">
+                  <ul class="actions m-t-20 hidden-xs">
+                     <a href="/dashboard/profile/photos" style="width:60px" type="button" class="btn btn-primary">Back</a>
+                  </ul>
+               </div>
+            </div>
+         </div>
       </div>
    </div>
    </div>
@@ -80,6 +90,14 @@
    $('.file-upload').on('change', function(e) {
      readURL(this);
    });
+
+   Dropzone.options.uploadWidget = {
+   init: function() {
+    this.on('success', function( file, resp ){
+       alert("Success");
+    });
+   },
+   };
 
    $(".upload-image").on('click', function() {
       $(".file-upload").click();

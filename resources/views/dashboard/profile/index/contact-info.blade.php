@@ -99,7 +99,7 @@
             <dt class="p-t-10">Upload Cover Photo</dt>
             <dd>
                 <div class="fg-line">
-                       <input type="file" name="image" >
+                       <input type="file" name="cover_image" >
                 </div>
             </dd>
         </dl>

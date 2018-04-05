@@ -35,33 +35,12 @@
                   Total Connections
               </div>
           </div>
-
-          <div class="pmo-block pmo-contact hidden-xs">
-              <h2>Contact</h2>
-
-              <ul>
-                  <li><i class="zmdi zmdi-phone"></i> 00971 12345678 9</li>
-                  <li><i class="zmdi zmdi-email"></i> malinda-h@gmail.com</li>
-                  <li><i class="zmdi zmdi-facebook-box"></i> malinda.hollaway</li>
-                  <li><i class="zmdi zmdi-twitter"></i> @malinda (twitter.com/malinda)</li>
-                  <li>
-                      <i class="zmdi zmdi-pin"></i>
-                      <address class="m-b-0 ng-binding">
-                          44-46 Morningside Road,<br>
-                          Edinburgh,<br>
-                          Scotland
-                      </address>
-                  </li>
-              </ul>
-          </div>
-
         @include('dashboard.profile.include.sidebar')
       </div>
 
       <div class="pm-body clearfix">
         @include('dashboard.profile.include.tab')
           <div class="timeline">
-
             @include('dashboard.profile.timeline.text')
               @include('dashboard.profile.timeline.image')
 

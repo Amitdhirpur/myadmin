@@ -47,21 +47,6 @@
                            </div>
                         </li>
                      </ul>
-                     <ul class="actions m-t-20 hidden-xs">
-                        <li class="dropdown">
-                           <a href="" data-toggle="dropdown">
-                           <i class="zmdi zmdi-more-vert"></i>
-                           </a>
-                           <ul class="dropdown-menu dropdown-menu-right">
-                              <li>
-                                 <a href="">Refresh</a>
-                              </li>
-                              <li>
-                                 <a href="">Settings</a>
-                              </li>
-                           </ul>
-                        </li>
-                     </ul>
                   </div>
                   <div class="contacts c-profile clearfix row">
                      <div class="col-md-3 col-sm-4 col-xs-6">

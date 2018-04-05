@@ -81,7 +81,6 @@ class ProfileController extends Controller
   }
   public function store(Request $request)
   {
-
     $user = Auth::user();
     $userDetail = UserDetail::firstOrNew(['user_id' => $user->id]);
 
@@ -102,7 +101,7 @@ class ProfileController extends Controller
       $userDetail->skype=$request->skype;
       $userDetail->position=$request->position;
 
-      $file =$request->file('image');
+      $file =$request->file('cover_image');
       if($file && $file->isValid()){
         $filename = $file->getClientOriginalName();
         $filetype = $file->getClientMimeType();

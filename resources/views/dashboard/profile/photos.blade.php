@@ -26,7 +26,7 @@ $segm3 = Request::segment(3);
                <div class="pmo-pic">
                   <div class="p-relative">
                      <a href="">
-                     <img class="/assets/img-responsive" src="{{  $userDetail->profile_pic }}" alt="">
+                     <img class="/assets/img-responsive" class="profilePic" src="{{  $userDetail->profile_pic }}" alt="">
                      </a>
                      <div class="dropdown pmop-message">
                         <a data-toggle="dropdown" href="" class="btn bgm-white btn-float z-depth-1">
@@ -49,24 +49,7 @@ $segm3 = Request::segment(3);
                      Total Connections
                   </div>
                </div>
-               <div class="pmo-block pmo-contact hidden-xs">
-                  <h2>Contact</h2>
-                  <ul>
-                     <li><i class="zmdi zmdi-phone"></i> 00971 12345678 9</li>
-                     <li><i class="zmdi zmdi-email"></i> malinda-h@gmail.com</li>
-                     <li><i class="zmdi zmdi-facebook-box"></i> malinda.hollaway</li>
-                     <li><i class="zmdi zmdi-twitter"></i> @malinda (twitter.com/malinda)</li>
-                     <li>
-                        <i class="zmdi zmdi-pin"></i>
-                        <address class="m-b-0 ng-binding">
-                           44-46 Morningside Road,<br>
-                           Edinburgh,<br>
-                           Scotland
-                        </address>
-                     </li>
-                  </ul>
-               </div>
-               @include('dashboard.profile.include.sidebar')
+             @include('dashboard.profile.include.sidebar')
             </div>
             <div class="pm-body clearfix">
                @include('dashboard.profile.include.tab')
@@ -76,21 +59,6 @@ $segm3 = Request::segment(3);
                         <li class="{{ $segm3 == 'photos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/photos"><i class="zmdi zmdi-image"></i> Photos</a></li>
                         <li class="{{ $segm3 == 'videos' || $segm3 == 'connections' ? '' : 'active'}}"><a href="/dashboard/profile/videos"><i class="zmdi zmdi-play-circle"></i> Videos</a></li>
                         <li class="{{ $segm3 == 'albums' || $segm3 == 'connections' ? '' : 'active'}}"><a href=""><i class="zmdi zmdi-collection-image"></i> Albums</a></li>
-                     </ul>
-                     <ul class="actions m-t-20 hidden-xs">
-                        <li class="dropdown" dropdown>
-                           <a href="" dropdown-toggle>
-                           <i class="zmdi zmdi-more-vert"></i>
-                           </a>
-                           <ul class="dropdown-menu dropdown-menu-right">
-                              <li>
-                                 <a href="">Refresh</a>
-                              </li>
-                              <li>
-                                 <a href="">Settings</a>
-                              </li>
-                           </ul>
-                        </li>
                      </ul>
                   </div>
                   <a type="button" href="/dashboard/profile/photos/upload"  class="btn btn-float btn-danger m-btn"><i class="zmdi zmdi-plus"></i></a>
@@ -146,7 +114,7 @@ $segm3 = Request::segment(3);
          var reader = new FileReader();
 
          reader.onload = function (e) {
-             $('.mCS_img_loaded').attr('src', e.target.result);
+             $('.profilePic').attr('src', e.target.result);
          }
 
          reader.readAsDataURL(input.files[0]);
